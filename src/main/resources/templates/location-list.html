@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Location list</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Country code</th>
+        <th>Post code</th>
+        <th>Country</th>
+        <th>City</th>
+    </tr>
+    <tr th:each="location : ${locations}">
+        <td th:text="${location.id}"></td>
+        <td th:text="${location.countryCode}"></td>
+        <td th:text="${location.postcode}"></td>
+        <td th:text="${location.country}"></td>
+        <td th:text="${location.city}"></td>
+    </tr>
+</table>
+</body>
+</html>
