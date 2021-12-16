@@ -19,7 +19,7 @@ public class Location {
     private Integer id;
     @Enumerated(EnumType.STRING)
     private CountryCode countryCode;
-    private Integer postcode;
+    private String postcode;
     private String country;
     private String city;
 

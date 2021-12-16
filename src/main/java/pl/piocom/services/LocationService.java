@@ -30,6 +30,7 @@ public class LocationService {
             log.error("Location has not been saved", exception);
             throw exception;
         }
+        location.setCountry(location.getCountryCode().label);
         locationRepository.save(location);
     }
 

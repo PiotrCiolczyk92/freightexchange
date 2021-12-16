@@ -21,7 +21,7 @@ public class LocationController {
     private LocationService locationService;
 
     @GetMapping("/location-list")
-    public String mainView(ModelMap modelMap) {
+    public String locationList(ModelMap modelMap) {
         List<Location> locations = locationService.getAll();
         modelMap.addAttribute("locations", locations);
         return "/location-list";
