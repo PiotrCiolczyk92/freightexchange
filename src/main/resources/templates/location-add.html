@@ -9,14 +9,14 @@
 
 <form th:object="${location}" method="post">
     <div class="mb-3">
-        <label class="form-label">Country code</label>
+        <label class="form-label" for="code">Country code</label>
         <select th:field="*{countryCode}">
-            <option th:each="codes : ${allCodes}" th:value="${codes}" th:text="${codes.label}"></option>
+            <option id="code" th:each="codes : ${allCodes}" th:value="${codes}" th:text="${codes.label}"></option>
         </select>
         <br>
-        <label class="form-label">Country</label>
-        <input type="text" class="form-control" placeholder="Type country name..." th:field="*{country}"
-               th:value="*{country}">
+        <label for="country" class="form-label">Country</label>
+        <input id="country" type="text" class="form-control" placeholder="Type country name..." th:autocomplete="off"
+               th:field="*{country}"  th:value="*{country}">
         <br>
         <label class="form-label">Postcode</label>
         <input type="text" class="form-control" placeholder="Type postcode..." th:field="*{postcode}"

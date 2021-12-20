@@ -8,16 +8,16 @@
 <table>
     <tr>
         <th>ID</th>
-        <th>Country code</th>
-        <th>Post code</th>
+        <th>Code</th>
         <th>Country</th>
+        <th>Post code</th>
         <th>City</th>
     </tr>
     <tr th:each="location : ${locations}">
         <td th:text="${location.id}"></td>
         <td th:text="${location.countryCode}"></td>
-        <td th:text="${location.postcode}"></td>
         <td th:text="${location.country}"></td>
+        <td th:text="${location.postcode}"></td>
         <td th:text="${location.city}"></td>
     </tr>
 </table>

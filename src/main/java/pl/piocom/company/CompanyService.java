@@ -1,9 +1,9 @@
-package pl.piocom.services;
+package pl.piocom.company;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.piocom.entity.Company;
-import pl.piocom.repositories.CompanyRepository;
+import pl.piocom.company.Company;
+import pl.piocom.company.CompanyRepository;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class CompanyService {
     }
 
     public Company getById(int id) {
-       return companyRepository.getById(id);
+        return companyRepository.getById(id);
     }
 
     public void creat(Company company) {

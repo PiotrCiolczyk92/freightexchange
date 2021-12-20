@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8">
-    <title>Frag</title>
+    <title>Fragments</title>
 </head>
 <body>
-<nav th:fragment="navbar" class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <strong> Freightoo! </strong>
+<nav th:fragment="navbar" class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
+    <div class="display-7">
+        <ul>
+            <li><a th:href="@{/}" clas="nav-link px-2 link-dakr">HOME</a></li>
+        </ul>
     </div>
+    <div>
+        <a th:href="@{/login}" th:type="button" th:class="btn btn-danger btn-lg px-8">Log In</a>
+        <form th:method="post" th:action="@{logout}">
+            <input th:type="submit" th:value="Log Out">
+        </form>
+        <a th:href="@{/user-add}" th:type="button" th:class="btn btn-dark btn-lg px-8">Register</a>
+    </div>
+
 </nav>
 
 </body>

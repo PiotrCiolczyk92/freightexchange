@@ -1,13 +1,16 @@
 package pl.piocom.user;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @Slf4j
-public class UserService {
+public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
@@ -30,4 +33,8 @@ public class UserService {
         userRepository.save(user);
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUserName(username).orElseThrow(() -> new UsernameNotFoundException(username));
+    }
 }

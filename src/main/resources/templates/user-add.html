@@ -21,6 +21,13 @@
         <label class="form-label">Mobile</label>
         <input type="text" class="form-control" placeholder="Mobile" th:field="*{mobile}"
                th:value="*{mobile}">
+        <label class="form-lavel">Company</label>
+        <!--        Tutaj trzeba podac ID firmy do ktorej chce sie dolaczyc zakladajac konto-->
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" placeholder="username" th:field="*{username}"
+               th:value="*{username}">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" th:field="*{password}" th:value="*{password}">
 
     </div>
 </form>

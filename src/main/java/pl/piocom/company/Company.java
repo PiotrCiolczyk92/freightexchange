@@ -1,11 +1,14 @@
-package pl.piocom.entity;
+package pl.piocom.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.piocom.entity.Location;
+import pl.piocom.user.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -21,5 +24,6 @@ public class Company {
     private Location location;
     private String street;
     private Integer buildingNumber;
-
+    @OneToMany
+    private List<User> employees;
 }
