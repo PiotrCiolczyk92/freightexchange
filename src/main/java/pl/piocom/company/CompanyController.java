@@ -29,6 +29,7 @@ public class CompanyController {
         return "/company-list";
     }
 
+    //This maping using company and location attributes so we can use them in one html form.
     @GetMapping("/company-add")
     public String getForm(@ModelAttribute("company") Company company, @ModelAttribute("location") Location location, ModelMap modelMap) {
         Set<CountryCode> allCodes = EnumSet.allOf(CountryCode.class);
@@ -36,6 +37,7 @@ public class CompanyController {
         return "/company-add";
     }
 
+    //This mapping creating location and then using this location to create company that has location field in it.
     @PostMapping("/company-add")
     public String addCompany(Company company, Location location) {
         companyService.create(company, location);

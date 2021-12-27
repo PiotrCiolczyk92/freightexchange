@@ -28,10 +28,11 @@ public class CompanyService {
         return companyRepository.getById(id);
     }
 
+    //This method creating location and then adding it to company that we want to create.
     public void create(Company company, Location location) {
-        if (company.getId() != null) {
-            IllegalArgumentException exception = new IllegalArgumentException("Created company shall not have existing ID");
-            log.error("Company has not been created", exception);
+        if (company.getId() != null && location.getId() != null) {
+            IllegalArgumentException exception = new IllegalArgumentException("Created company/location shall not have existing ID");
+            log.error("Company/Location has not been created", exception);
         }
         location.setCountry(location.getCountryCode().label);
         locationRepository.save(location);
