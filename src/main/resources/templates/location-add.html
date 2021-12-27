@@ -14,9 +14,9 @@
             <option id="code" th:each="codes : ${allCodes}" th:value="${codes}" th:text="${codes.label}"></option>
         </select>
         <br>
-        <label for="country" class="form-label">Country</label>
-        <input id="country" type="text" class="form-control" placeholder="Type country name..." th:autocomplete="off"
-               th:field="*{country}"  th:value="*{country}">
+<!--        <label for="country" class="form-label">Country</label>-->
+<!--        <input id="country" type="text" class="form-control" placeholder="Type country name..." th:autocomplete="off"-->
+<!--               th:field="*{country}"  th:value="*{country}">-->
         <br>
         <label class="form-label">Postcode</label>
         <input type="text" class="form-control" placeholder="Type postcode..." th:field="*{postcode}"

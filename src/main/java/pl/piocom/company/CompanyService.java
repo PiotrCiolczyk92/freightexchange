@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pl.piocom.company.Company;
 import pl.piocom.company.CompanyRepository;
+import pl.piocom.entity.Location;
+import pl.piocom.repositories.LocationRepository;
 
 import java.util.List;
 
@@ -11,9 +13,11 @@ import java.util.List;
 @Slf4j
 public class CompanyService {
     CompanyRepository companyRepository;
+    LocationRepository locationRepository;
 
-    public CompanyService(CompanyRepository companyRepository) {
+    public CompanyService(CompanyRepository companyRepository, LocationRepository locationRepository) {
         this.companyRepository = companyRepository;
+        this.locationRepository = locationRepository;
     }
 
     public List<Company> getAll() {
@@ -24,11 +28,14 @@ public class CompanyService {
         return companyRepository.getById(id);
     }
 
-    public void creat(Company company) {
+    public void create(Company company, Location location) {
         if (company.getId() != null) {
             IllegalArgumentException exception = new IllegalArgumentException("Created company shall not have existing ID");
             log.error("Company has not been created", exception);
         }
+        location.setCountry(location.getCountryCode().label);
+        locationRepository.save(location);
+        company.setLocation(location);
         companyRepository.save(company);
     }
 

@@ -20,7 +20,7 @@ public class UserController {
         return "/user-list";
     }
 
-    @PostMapping("/user-add")
+    @GetMapping("/user-add")
     public String getForm(@ModelAttribute("user") User user) {
         return "/user-add";
     }

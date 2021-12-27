@@ -30,8 +30,9 @@ public class User implements UserDetails {
     @ManyToOne
     private Company company;
     private String username;
-    @Column(nullable = false, unique = true)
+//    @Column(nullable = false, unique = true)
     private String password;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public String getUserDetails() {
