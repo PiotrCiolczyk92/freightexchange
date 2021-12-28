@@ -9,34 +9,33 @@
 
     <label for="name" class="form-label">Company Name</label>
     <input id="name" type="text" class="form-control" th:autocomplete="off" th:field="*{name}" th:value="*{name}">
-
+    <br>
     <div th:object="${location}">
         <label for="country_code" class="form-control">Country code</label>
         <select id="country_code" class="form-control" th:field="*{countryCode}">
             <option th:each="codes : ${allCodes}" th:value="${codes}" th:text="${codes.label}"></option>
         </select>
-
+        <br>
         <label for="postcode" class="form-label">Postcode</label>
         <input id="postcode" class="form-control" th:autocomplete="off"
                th:field="*{postcode}" th:value="*{postcode}">
 
-<!--        <label for="country" class="form-label">Country</label>-->
-<!--        <input id="country" class="form-control" th:autocomplete="off"-->
-<!--               th:field="*{country}" th:value="*{country}">-->
-
+        <!--        <label for="country" class="form-label">Country</label>-->
+        <!--        <input id="country" class="form-control" th:autocomplete="off"-->
+        <!--               th:field="*{country}" th:value="*{country}">-->
+        <br>
         <label for="city" class="form-label">City</label>
         <input id="city" class="form-control" th:autocomplete="off"
                th:field="*{city}" th:value="*{city}">
     </div>
-
     <label for="street" class="form-label">Street</label>
     <input id="street" type="text" class="form-control" th:autocomplete="off"
            th:field="*{street}" th:value="*{street}">
-
+    <br>
     <label for="building_number" class="form-label">Building No.</label>
     <input id="building_number" type="text" class="form-control" th:autocomplete="off"
            th:field="*{buildingNumber}" th:value="*{buildingNumber}">
-
+    <br>
     <button type="submit" class="btn btn-primary" value="CREATE">CREATE</button>
 </form>
 </body>

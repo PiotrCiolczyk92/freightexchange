@@ -1,4 +1,4 @@
-package pl.piocom.Controller;
+package pl.piocom.location;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -6,9 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.piocom.entity.Location;
 import pl.piocom.enums.CountryCode;
-import pl.piocom.services.LocationService;
 
 import java.util.EnumSet;
 import java.util.List;

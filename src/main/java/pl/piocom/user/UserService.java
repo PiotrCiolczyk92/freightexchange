@@ -5,6 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import pl.piocom.company.Company;
+import pl.piocom.company.CompanyService;
+import pl.piocom.enums.Role;
 
 import java.util.List;
 
@@ -30,6 +33,7 @@ public class UserService implements UserDetailsService {
             IllegalArgumentException exception = new IllegalArgumentException("Created user can't have existing id");
             log.error("User has not been created", exception);
         }
+        user.setRole(Role.USER);
         userRepository.save(user);
     }
 

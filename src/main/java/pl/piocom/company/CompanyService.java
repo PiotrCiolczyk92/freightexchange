@@ -2,10 +2,9 @@ package pl.piocom.company;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.piocom.company.Company;
-import pl.piocom.company.CompanyRepository;
-import pl.piocom.entity.Location;
-import pl.piocom.repositories.LocationRepository;
+import pl.piocom.location.Location;
+import pl.piocom.location.LocationRepository;
+import pl.piocom.user.User;
 
 import java.util.List;
 

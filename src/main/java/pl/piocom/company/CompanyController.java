@@ -5,9 +5,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.piocom.entity.Location;
+import pl.piocom.location.Location;
 import pl.piocom.enums.CountryCode;
-import pl.piocom.services.LocationService;
+import pl.piocom.location.LocationService;
 
 import java.util.EnumSet;
 import java.util.Set;

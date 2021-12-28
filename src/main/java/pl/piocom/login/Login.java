@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Login {
     @GetMapping("login")
     public String login() {
-        return "redirect:/";
+        return "/login";
     }
 }

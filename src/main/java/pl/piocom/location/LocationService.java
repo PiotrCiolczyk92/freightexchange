@@ -1,9 +1,9 @@
-package pl.piocom.services;
+package pl.piocom.location;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.piocom.entity.Location;
-import pl.piocom.repositories.LocationRepository;
+import pl.piocom.location.Location;
+import pl.piocom.location.LocationRepository;
 
 import java.util.List;
 

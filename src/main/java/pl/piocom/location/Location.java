@@ -1,4 +1,4 @@
-package pl.piocom.entity;
+package pl.piocom.location;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

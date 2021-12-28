@@ -27,7 +27,7 @@ public class User implements UserDetails {
     private String lastName;
     private String email;
     private String mobile;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     private Company company;
     private String username;
 //    @Column(nullable = false, unique = true)
@@ -47,21 +47,21 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.piocom.entity.Location;
+import pl.piocom.location.Location;
 import pl.piocom.user.User;
 
 import javax.persistence.*;
@@ -24,6 +24,6 @@ public class Company {
     private Location location;
     private String street;
     private Integer buildingNumber;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<User> employees;
 }
